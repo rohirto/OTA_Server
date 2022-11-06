@@ -1,0 +1,15 @@
+{
+  "name": "otaserver2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rohirto",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "md5-file": "^5.0.0"
+  }
+}
