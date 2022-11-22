@@ -11,13 +11,27 @@ app.get('/', (req, res) => {
   console.log('GET');
 })
 
-const LAST_VERSION = 'v9'
+const LAST_VERSION = 'v12'
 app.get("/updater", function (req, res) {
     console.log(req.headers);
 
    var version = req.get('x-ESP8266-version');
     if (version !== LAST_VERSION) {
         res.sendFile(__dirname + "/firmware/updates/latest.bin");
+    } else {
+        console.log("No new version");
+      res.writeHeader(304);  
+      res.end();
+   }
+});
+
+const BEDROOM_LAST_VERSION = '0.0.0'
+app.get("/bed_room_update", function (req, res) {
+    console.log(req.headers);
+
+   var version = req.get('x-ESP8266-version');
+    if (version !== LAST_VERSION) {
+        res.sendFile(__dirname + "/firmware/bedroom_nodemcu/latest.bin");
     } else {
         console.log("No new version");
       res.writeHeader(304);  
