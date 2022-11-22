@@ -25,13 +25,27 @@ app.get("/updater", function (req, res) {
    }
 });
 
-const BEDROOM_LAST_VERSION = '1.0.0'
+const BEDROOM_LAST_VERSION = '1.3.1'
 app.get("/bed_room_update", function (req, res) {
     console.log(req.headers);
 
    var version = req.get('x-ESP8266-version');
-    if (version !== LAST_VERSION) {
+    if (version !== BEDROOM_LAST_VERSION) {
         res.sendFile(__dirname + "/firmware/bedroom_nodemcu/latest.bin");
+    } else {
+        console.log("No new version");
+      res.writeHeader(304);  
+      res.end();
+   }
+});
+
+const ONE_RELAY_LAST_VERSION = '1.0.0'
+app.get("/one_relay_update", function (req, res) {
+    console.log(req.headers);
+
+   var version = req.get('x-ESP8266-version');
+    if (version !== BEDROOM_LAST_VERSION) {
+        res.sendFile(__dirname + "/firmware/one_relay/latest.bin");
     } else {
         console.log("No new version");
       res.writeHeader(304);  
