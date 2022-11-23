@@ -53,7 +53,7 @@ app.get("/one_relay_update", function (req, res) {
    }
 });
 
-const FOUR_REALY_LAST_VERSION = '1.0.2'
+const FOUR_REALY_LAST_VERSION = '1.0.3'
 app.get("/four_relay_update", function (req, res) {
     console.log(req.headers);
 
