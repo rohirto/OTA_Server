@@ -25,7 +25,7 @@ app.get("/updater", function (req, res) {
    }
 });
 
-const BEDROOM_LAST_VERSION = '1.3.3'
+const BEDROOM_LAST_VERSION = '1.3.4'
 app.get("/bed_room_update", function (req, res) {
     console.log(req.headers);
 
