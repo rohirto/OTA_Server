@@ -25,7 +25,7 @@ app.get("/updater", function (req, res) {
    }
 });
 
-const BEDROOM_LAST_VERSION = '1.3.1'
+const BEDROOM_LAST_VERSION = '1.3.2'
 app.get("/bed_room_update", function (req, res) {
     console.log(req.headers);
 
@@ -39,7 +39,7 @@ app.get("/bed_room_update", function (req, res) {
    }
 });
 
-const ONE_RELAY_LAST_VERSION = '1.0.1'
+const ONE_RELAY_LAST_VERSION = '1.0.2'
 app.get("/one_relay_update", function (req, res) {
     console.log(req.headers);
 
