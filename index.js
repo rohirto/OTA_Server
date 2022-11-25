@@ -25,13 +25,13 @@ app.get("/updater", function (req, res) {
    }
 });
 
-const BEDROOM_LAST_VERSION = '1.4.4'
+const BEDROOM_LAST_VERSION = '1.4.5'
 app.get("/bed_room_update", function (req, res) {
     console.log(req.headers);
 
    var version = req.get('x-ESP8266-version');
     if (version !== BEDROOM_LAST_VERSION) {
-        res.sendFile(__dirname + "/firmware/bedroom_nodemcu/latest.bin");
+        res.sendFile(__dirname + "/firmware/bedroom_nodemcu/bedroom_nodemcu.ino.bin");
     } else {
         console.log("No new version");
       res.writeHeader(304);  
@@ -39,13 +39,13 @@ app.get("/bed_room_update", function (req, res) {
    }
 });
 
-const ONE_RELAY_LAST_VERSION = '1.0.3'
+const ONE_RELAY_LAST_VERSION = '1.0.4'
 app.get("/one_relay_update", function (req, res) {
     console.log(req.headers);
 
    var version = req.get('x-ESP8266-version');
     if (version !== ONE_RELAY_LAST_VERSION) {
-        res.sendFile(__dirname + "/firmware/one_relay/latest.bin");
+        res.sendFile(__dirname + "/firmware/one_relay/one_relay_esp12f.ino.bin");
     } else {
         console.log("No new version");
       res.writeHeader(304);  
@@ -53,7 +53,7 @@ app.get("/one_relay_update", function (req, res) {
    }
 });
 
-const FOUR_REALY_LAST_VERSION = '1.0.11'
+const FOUR_REALY_LAST_VERSION = '1.0.12'
 app.get("/four_relay_update", function (req, res) {
     console.log(req.headers);
 
