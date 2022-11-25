@@ -53,13 +53,13 @@ app.get("/one_relay_update", function (req, res) {
    }
 });
 
-const FOUR_REALY_LAST_VERSION = '1.0.9'
+const FOUR_REALY_LAST_VERSION = '1.0.10'
 app.get("/four_relay_update", function (req, res) {
     console.log(req.headers);
 
    var version = req.get('x-ESP8266-version');
     if (version !== FOUR_REALY_LAST_VERSION) {
-        res.sendFile(__dirname + "/firmware/four_relay/latest.bin");
+        res.sendFile(__dirname + "/firmware/four_relay/four_relay_esp07.ino.bin");
     } else {
         console.log("No new version");
       res.writeHeader(304);  
